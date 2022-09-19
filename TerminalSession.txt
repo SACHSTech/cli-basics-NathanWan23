@@ -1,1 +1,248 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1> pwd
+
+Path
+----
+C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1
+
+
+
+
+    Directory: C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1
+
+
+Mode                 LastWriteTime         Length Name                                                                                                                                               
+----                 -------------         ------ ----                                                                                                                                               
+d-----        2022-09-17   4:39 PM                CLIBasicsFolder                                                                                                                                    
+
+
+correct and try again.
+At line:1 char:1
++ touch myfile.txt
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> New-Item -Path . -Name "myfile.txt" -ItemType "file"
+
+
+    Directory: C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2022-09-17   4:42 PM              0 myfile.txt
+
+
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> echo Nathan Wan >> myfile.txt
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> echo ICS4U1b >> myfile.txt
+Nathan
+Wan
+ICS4U1b
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> cp myfile.txt myfile_copy.txt
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> ls CLIBasicsFolder
+ls : Cannot find path 'C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder\CLIBasicsFolder' because it does not exist.
+At line:1 char:1
++ ls CLIBasicsFolder
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\nw556\...CLIBasicsFolder:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ls : Cannot find path 'C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder\CLIBasicsFolder' because it does not exist.
+At line:1 char:1
++ ls CLIBasicsFolder
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\nw556\...CLIBasicsFolder:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> ls
+    Directory: C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---l        2022-09-17   4:44 PM             46 myfile.txt
+-a---l        2022-09-17   4:44 PM             46 myfile_copy.txt
+
+
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> mv myfile_copy.txt myfile2.txt
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> cd~
+cd~ : The term 'cd~' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is       
+correct and try again.
+At line:1 char:1
++ cd~
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (cd~:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder> cd ~
+PS C:\Users\nw556> ls 
+
+
+    Directory: C:\Users\nw556
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2021-12-10  12:59 PM                .cache
+d-----        2021-12-10  12:59 PM                .config
+d-----        2021-12-10  12:59 PM                .eclipse
+d-----        2021-12-14   8:35 PM                .m2
+d-----        2022-07-17  10:57 PM                .ms-ad
+d-----        2022-08-21  12:08 AM                .Origin
+d-----        2021-12-28   3:19 PM                .p2
+d-----        2022-08-21  12:08 AM                .QtWebEngineProcess
+d-----        2021-12-10   1:44 PM                .ssh
+d-----        2021-12-13  11:37 AM                .vscode
+d-r---        2020-10-19  11:02 AM                Contacts
+d-r---        2020-10-19  10:54 AM                Desktop
+d-----        2020-02-08   6:09 PM                Documents
+d-r---        2022-09-17   1:57 PM                Downloads
+d-----        2021-12-10  12:55 PM                eclipse
+d-r---        2020-10-19  11:02 AM                Favorites
+d-----        2021-12-10  12:59 PM                git
+d-----        2021-12-10  12:58 PM                ICS3U1Workspace
+d-r---        2020-10-19  11:02 AM                Links
+d-r---        2022-08-21   2:19 PM                Music
+dar--l        2022-09-17   1:11 PM                OneDrive
+d-r---        2020-10-19  11:02 AM                Saved Games
+d-r---        2020-10-19  11:02 AM                Searches
+d-----        2020-08-23  12:35 PM                Twitch
+d-r---        2020-10-19  11:02 AM                Videos
+-a----        2021-12-20  12:18 PM             61 .gitconfig
+
+
+PS C:\Users\nw556> cd ..
+PS C:\Users> rm ./CLIBasicsFolder/myfile.txt 
+rm : Cannot find path 'C:\Users\CLIBasicsFolder\myfile.txt' because it does not exist.
+At line:1 char:1
++ rm ./CLIBasicsFolder/myfile.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\CLIBasicsFolder\myfile.txt:String) [Remove-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+PS C:\Users> rm ./myfile.txt
+rm : Cannot find path 'C:\Users\myfile.txt' because it does not exist.
+At line:1 char:1
++ rm ./myfile.txt
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\myfile.txt:String) [Remove-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+PS C:\Users> rm - 
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1> rm -r myfile.txt
+At line:1 char:1
++ rm -r myfile.txt
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\nw556\...23-1\myfile.txt:String) [Remove-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1> rm -r CLIBasicsFolder/myfile.txt
+
+Confirm
+The item at C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder has children and the Recurse parameter was not specified. If you continue, all children will be removed with    
+the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+rmdir : C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder is an NTFS junction point. Use the Force parameter to delete or modify this object.
+At line:1 char:1
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\nw556\...CLIBasicsFolder:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1> rm - r CLIBasicsFolder
+Remove-Item : A positional parameter cannot be found that accepts argument 'r'.
+At line:1 char:1
++ rm - r CLIBasicsFolder
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Remove-Item], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+rm : C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder is an NTFS junction point. Use the Force parameter to delete or modify this object.
+At line:1 char:1
++ rm -r CLIBasicsFolder
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\nw556\...CLIBasicsFolder:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1> rm CLIBasicsFolder
+
+Confirm
+The item at C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder has children and the Recurse parameter was not specified. If you continue, all children will be removed with    
+the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): A
+rm : C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder is an NTFS junction point. Use the Force parameter to delete or modify this object.
+At line:1 char:1
++ rm CLIBasicsFolder
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\nw556\...CLIBasicsFolder:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1> rmdir CLIBasicsFolder
+
+Confirm
+The item at C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder has children and the Recurse parameter was not specified. If you continue, all children will be removed with    
+the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+rmdir : C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1\CLIBasicsFolder is an NTFS junction point. Use the Force parameter to delete or modify this object.
+At line:1 char:1
++ rmdir CLIBasicsFolder
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\nw556\...CLIBasicsFolder:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+ 
+PS C:\Users\nw556\OneDrive\Desktop\cli-basics-NathanWan23-1>
+
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ ls
+CLIBasicsFolder/  README.md  TerminalSession.txt
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ rm -r CLIBasicsFolder
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$
+
+
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ ls
+CLIBasicsFolder/  README.md  TerminalSession.txt
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ rm -r CLIBasicsFolder
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ ls CLI-BASICS-NATHANWAN23-1
+ls: cannot access 'CLI-BASICS-NATHANWAN23-1': No such file or directory
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ ls CLI-Basics-assignment
+ls: cannot access 'CLI-Basics-assignment': No such file or directory
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ ls
+README.md  TerminalSession.txt
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$ ls ..
+'Aim Lab.url'                                           'Kingdom Classic.url'
+'BTT 1O1 Work'/                                         'Kingdom New Lands.url'
+ cli-basics-NathanWan23-1/                              'Microsoft Teams.lnk'*
+ desktop.ini                                            'Nathan (YCDSBK12) - Chrome.lnk'*
+'Duke of Ed Silver AJ Map'/                             'Nathan_R2D2 - Chrome.lnk'*
+'Eclipse IDE for Java Developers - 2021-12.lnk'*        'Norton Installation Files.lnk'*
+ Fabroa-ICS4U-NotesExamples/                            'Okushu 2020 August Work'/
+ Fortnite.url                                           'Riot Client.lnk'*
+ grade-11-review---native-java-assignment-NathanWan23/  'TGJ 2O1a (Coms Tech)'/
+'ICS3U1 CPT'/                                           'Visual Studio Code.lnk'*
+'JARs Processing'/
+
+nw556@DESKTOP-L60JN9C MINGW64 ~/OneDrive/Desktop/cli-basics-NathanWan23-1 (main)
+$
